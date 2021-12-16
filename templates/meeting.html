@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Manager</title>
+    <style type="text/css">
+        .nav{
+            display: flex;
+            float: right;
+        }
+        .nav >div{
+            padding-left: 18px;
+            padding-right: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div><a href={{"/manager?manager_id="+manager_id+"&session="+session}}>Home</a></div>
+        <div><a href={{"/addMeeting?manager_id="+manager_id+"&session="+session}}>Add Meeting</a></div>
+        <div><a href={{"/login"}}>Log Out</a></div>
+        <div><a href={{"/login"}}>Login</a></div>
+    </div>
+    <section >
+        <h2>Meeting detail</h2>
+    	<div style="display: flex;flex-direction: column;">
+    		<span>Meeting Id : {{meeting_detail["meeting_id"]}}</span>
+    		<span>Manager Id : {{meeting_detail["manager_id"]}}</span>
+    		<span>Is Booked  : {{meeting_detail["isBooked"]}}</span>
+    		<span>Employee Id  : {{meeting_detail["employee_id"]}}</span>
+    		<span>Time  : {{meeting_detail["time"]}}</span>
+    		<span>Date : {{meeting_detail["date"]}}</span>
+    		<span>link : {{meeting_detail["link"]}}</span>
+    	</div>
+        <h2>Console to change link</h2>
+    	<form action="/changeLink" method="post" >
+    		<input type="text" name="link" value="Link">
+            <input type="submit" value="Update" >
+    		<input type="hidden" name="session" value={{session}}>
+    		<input type="hidden" name="meeting_id" value={{meeting_id}}>
+			<input type="hidden" name="manager_id" value={{manager_id}}>
+    	</form>
+        <h2>Console to delete meeting</h2>
+    	<form action="/deleteMeeting" method="post" >
+    		<input type="password" name="pin" placeholder="pin">
+            <input type="submit" value="Update" >
+    		<input type="hidden" name="session" value={{session}}>
+    		<input type="hidden" name="meeting_id" value={{meeting_id}}>
+			<input type="hidden" name="manager_id" value={{manager_id}}>
+    	</form>
+    </section>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,31 @@
+.nav{
+    display: flex;
+    float: right;
+}
+.nav >div{
+    padding-left: 18px;
+    padding-right: 4px;
+}
+
+.login{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.managerLogin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.managerLogin>input{
+    margin-top: 12px;
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+}

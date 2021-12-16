@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Manager</title>
+    <style type="text/css">
+        .nav{
+            display: flex;
+            float: right;
+        }
+        .nav >div{
+            padding-left: 18px;
+            padding-right: 4px;
+        }
+
+        .login{
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            justify-content: space-evenly;
+        }
+
+        .managerLogin{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .managerLogin>input{
+            margin-top: 12px;
+            width: 200px;
+            height: 30px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div><a href="/home">Home</a></div>
+    </div>
+    <section >
+
+    <div class="login">
+        <form action ="/managerLogin" method="post" class="managerLogin">
+            <h1>Manager Login</h1>
+            <input  type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="pin" placeholder="Pin" required>
+            <input type="submit" value="Login" >
+        </form>
+    
+        <form action="/employeeLogin" method="post" class="managerLogin">
+            <h1>Employee Login</h1>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="pin" placeholder="Pin" required>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+    </section>
+</body>
+</html>
+
+
+
+
+

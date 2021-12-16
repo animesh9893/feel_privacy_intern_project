@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Manager</title>
+    <style type="text/css">
+        .nav{
+            display: flex;
+            float: right;
+        }
+        .nav >div{
+            padding-left: 18px;
+            padding-right: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div><a href={{"/manager?manager_id="+manager_id+"&session="+session}}>Home</a></div>
+        <div><a href={{"/addMeeting?manager_id="+manager_id+"&session="+session}}>Add Meeting</a></div>
+        <div><a href={{"/logoutManager?manager_id="+manager_id+"&session="+session}}>Log Out</a></div>
+        <div><a href={{"/login"}}>Login</a></div>
+    </div>
+    <section >
+        <h1>Add meeting</h1>
+        <form action="/addMeetingHandler" method="post">
+            <input type="datetime-local" name="time">
+            <input type="hidden" name="session" value={{session}}>
+            <input type="hidden" name="manager_id" value={{manager_id}}>
+            <input type="submit">
+        </form>
+    </section>
+</body>
+</html>
+
+
+
+
+
